@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'inter', Arial, sans-serif;
+    src: url(./assets/font/Inter-Italic-VariableFont_opsz\,wght.ttf) format("opentype"),
+    url(./assets/font/Inter-VariableFont_opsz\,wght.ttf) format("opentype");
+
+    /*Here i'm using @font-face to import the font(s) i will be using in this project
+    format('opentype'): Indicates that the font file is in OpenType format.
+    
+    The font name is Inter but as u see there are several other fonts named as well. 
+    These are fallback fonts for when one format is not supported another can be
+    */
+}
+
+:root{
+
+    /*colors*/
+    --white-: #fff;
+    --black-: #000;
+    --text-light:#ffff;
+    --text-light-opacit-: #ffffff99;
+    --text-dark: #4C4C4C;
+
+    /*Text*/
+    --font-size-xxl: 96px;
+    --font-size-xl: 70px;
+    --font-size-l: 40px;
+    --font-size-m: 11px;
+    --font-size-s: 13px;
+
+    --font-family: inter;
+
+    --font-weight-black: 900;
+    --font-weight-regular: 400;
+
+    /*Using custom properties offer many advantages when working in css. 
+    A couple of these advantages could be; reusability, maintainability, dynamic changes and
+    scope and specificity
+    
+    Complex calculations can also be one of them,
+    e.g. 
+    .container {
+     margin: calc(var(--base-spacing) * 2);
+    }
+    */
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'inter' ;
+}
+
+.cardMain-container{
+    position: absolute;
+    right: 50%;
+    top: 50%;
+
+}
+
+/*pC-front*/
+
+#cardContainer{
+    height: 433px;
+    width: 362px;
+}
+
+.pC-front--container{
+    position: relative;
+    justify-content: center;
+
+}
+
+
+.pC-front--container:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-image: url(./assets/buildingsBg.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.pC-front--content{
+    position: relative;
+    
+}
+
+.pC-front--content img{
+    height: 350px;
+    position: absolute;
+    right: -10px;
+    top: 100px;
+}
+
+h2{
+    font-size: var(--font-size-xxl);
+    color: var(--text-light);
+}
+
+h4{
+    font-size: var(--font-size-l);
+    color: var(--text-light-opacit-);
+}
+
+h3{
+    font-size: var(--font-size-xl);
+    color: var(--text-dark);
+}
+
+.design{
+    rotate: 90deg;
+    position: absolute;
+    left: -47px;
+    top: 89px;
+
+}
+
+.frontDev{
+    rotate: 90deg;
+    position: absolute;
+    left: -150px;
+    top: 150px;
+}
+
+
+.name{
+    position: absolute;
+    right: 23px;
+    top: 20px;
+}
+
+/*using the right, top, left properties to place the elements. 
+.frontDev and .design are placed on the left for example and img and .name are 
+placed on the left of the parent. 
+*/
+
+/*pC-back*/
+
+.pC-back--container{
+    position: relative;
+    background-color: var(--white-);
+}
+
+
+.pC-back--container:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: url(./assets/buildingsBg.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.pC-back--content{
+    position: relative;
+    
+}
+
+#icon{
+    height: 25px;
+    width: auto;
+}
+
