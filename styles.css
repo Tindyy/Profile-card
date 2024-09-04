@@ -1,26 +1,20 @@
+
 @font-face {
     font-family: 'inter', Arial, sans-serif;
     src: url(./assets/font/Inter-Italic-VariableFont_opsz\,wght.ttf) format("opentype"),
     url(./assets/font/Inter-VariableFont_opsz\,wght.ttf) format("opentype");
-
-    /*Here i'm using @font-face to import the font(s) i will be using in this project
-    format('opentype'): Indicates that the font file is in OpenType format.
-    
-    The font name is Inter but as u see there are several other fonts named as well. 
-    These are fallback fonts for when one format is not supported another can be
-    */
+    /* @font-face to import the fonts */
 }
 
 :root{
-
-    /*colors*/
+    /* Colors */
     --white-: #fff;
     --black-: #000;
-    --text-light:#ffff;
+    --text-light: #ffff;
     --text-light-opacit-: #ffffff99;
     --text-dark: #4C4C4C;
 
-    /*Text*/
+    /* Text */
     --font-size-xxl: 96px;
     --font-size-xl: 70px;
     --font-size-l: 40px;
@@ -31,47 +25,61 @@
 
     --font-weight-black: 900;
     --font-weight-regular: 400;
-
-    /*Using custom properties offer many advantages when working in css. 
-    A couple of these advantages could be; reusability, maintainability, dynamic changes and
-    scope and specificity
-    
-    Complex calculations can also be one of them,
-    e.g. 
-    .container {
-     margin: calc(var(--base-spacing) * 2);
-    }
-    */
+    /* Custom properties for reusability and maintainability */
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
-    font-family: 'inter' ;
+    font-family: 'inter';
 }
 
-.cardMain-container{
+/* Card Main Container */
+.cardMain-container {
     position: absolute;
     right: 50%;
     top: 50%;
-
+    transform: translate(50%, -50%);
+    perspective: 1000px; /* Perspective to create 3D effect */
 }
 
-/*pC-front*/
+.card-inner {
+    position: relative;
+    width: 362px;
+    height: 433px;
+    transform-style: preserve-3d; /* Preserve 3D transformation */
+    transition: transform 0.6s ease; /* Smooth flip transition */
+}
 
-#cardContainer{
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back face during the flip */
+}
+
+.card-face-back {
+    transform: rotateY(180deg); /* Back face is rotated 180 degrees */
+}
+
+.cardMain-container:hover .card-inner {
+    transform: rotateY(180deg); /* Rotate the card 180 degrees on hover */
+}
+
+
+/* PC Front */
+#cardContainer {
     height: 433px;
     width: 362px;
+    box-shadow: #000;
 }
 
-.pC-front--container{
+.pC-front--container {
     position: relative;
     justify-content: center;
-
 }
 
-
-.pC-front--container:before{
+.pC-front--container:before {
     content: '';
     display: block;
     position: absolute;
@@ -84,69 +92,59 @@
     background-size: cover;
 }
 
-.pC-front--content{
+.pC-front--content {
     position: relative;
-    
 }
 
-.pC-front--content img{
+.pC-front--content img {
     height: 350px;
     position: absolute;
     right: -10px;
     top: 100px;
 }
 
-h2{
+h2 {
     font-size: var(--font-size-xxl);
     color: var(--text-light);
 }
 
-h4{
-    font-size: var(--font-size-l);
-    color: var(--text-light-opacit-);
-}
-
-h3{
+h3 {
     font-size: var(--font-size-xl);
     color: var(--text-dark);
 }
 
-.design{
+h4 {
+    font-size: var(--font-size-l);
+    color: var(--text-light-opacit-);
+}
+
+.design {
     rotate: 90deg;
     position: absolute;
     left: -47px;
     top: 89px;
-
 }
 
-.frontDev{
+.frontDev {
     rotate: 90deg;
     position: absolute;
     left: -150px;
     top: 150px;
 }
 
-
-.name{
+.name {
     position: absolute;
     right: 23px;
     top: 20px;
 }
 
-/*using the right, top, left properties to place the elements. 
-.frontDev and .design are placed on the left for example and img and .name are 
-placed on the left of the parent. 
-*/
-
-/*pC-back*/
-
-.pC-back--container{
+/* PC Back */
+.pC-back--container {
     position: relative;
     background-color: var(--white-);
 }
 
-
-.pC-back--container:before{
+.pC-back--container:before {
     content: '';
     display: block;
     position: absolute;
@@ -159,13 +157,108 @@ placed on the left of the parent.
     background-size: cover;
 }
 
-.pC-back--content{
+.pC-back--content {
     position: relative;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-#icon{
-    height: 25px;
-    width: auto;
+.pC-back--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
+
+#socials {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+#socials img {
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#socials p {
+    margin: 0;
+    flex: 1;
+    font-size: 14px;
+    position: relative;
+    padding-bottom: 5px;
+    /* Adds a little space between the text and the line */
+}
+
+#socials p::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 70%;
+    background-color: #000;
+    /* Line under each paragraph */
+}
+
+.logo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Cursor */
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Animation */
+.hover-this {
+    transition: all 0.3s ease;
+}
+
+.hover-this:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(8);
+}
+
+/* Media Queries */
+@media(min-width: 900px) {
+    .pC-back--container {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media(max-width: 900px) {
+    .pC-back--container {
+        top: 30%;
+    }
+    
+    .hover-this {
+        width: 100%;
+        padding: 20px 0;
+        display: inline-block;
+    }
+}
+
+
 

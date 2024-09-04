@@ -4,62 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="./styles/back.css">
     <title>ProfileCard Tessa</title>
 </head>
 <body>
 
     <div class="cardMain-container">
-        <section class="pC-front--container" id="cardContainer">
-            <div class="pC-front--content">
-                <div class="design">
-                    <h2>Design</h2>
-                </div>
-                <div class="frontDev">
-                    <h4> Frontend developer </h4>
-                </div>
-                <div class="name">
-                    <h3> Tessa </h3>
-                </div>
-                <img  id="pCImg" src="./assets/MWOB.png" alt="Tessa picture">
-            </div>
-        </section>
-    
-    
-    
-        <section class="pC-back--container" id="cardContainer">
-            <div class="pC-back--content">
-                <div class="instagram" id="socials">
-                    <div>
-                        <h3>hello world</h3>
+        <div class="card-inner">
+            <section class="pC-front--container  card-face card-face-front" id="cardContainer">
+                <div class="pC-front--content">
+                    <div class="design">
+                        <h2>Design</h2>
                     </div>
-                    <img src="./assets/icons/instagram.png" id="icon" alt="Instagram logo">
-                    <p>t.ind01</p>
-                    <span id="line"></span>
-                </div>
-                <div class="phoneNumber" id="socials">
-                    <img src="./assets/icons/phone.png" id="icon" alt="Phone logo">
-                    <p>+31 06 12 34 56 78</p>
-                    <span id="line"></span>
-                </div>
-                <div class="github" id="socials">
-                    <img src="./assets/icons/github.png" id="icon" alt="Github logo">
-                    <p> Tindyy </p>
-                    <span  id="line"></span>
-                </div>
-                <div class="gmail" id="socials">
-                    <img src="./assets/icons/gmail.png" id="icon" alt="Gmail Logo">
-                    <p> tessa.van.der.graaf@hva.nl </p>
-                    <span id="line"></span>
-                </div>
-                <div class="logo">
-                    <h3> Tessa </h3>
-                    <div class="logoStripe--blank">
-                        <h5>Designs and development</h4>
+                    <div class="frontDev">
+                        <h4> Frontend developer </h4>
                     </div>
+                    <div class="name">
+                        <h3> Tessa </h3>
+                    </div>
+                    <img  id="pCImg" src="./assets/MWOB.png" alt="Tessa picture">
                 </div>
-            </div>
             </section>
+        
+        
+        
+            <section class="pC-back--container card-face card-face-back" id="cardContainer">
+                <div class="pC-back--content">
+                    <div class="instagram hover-this" id="socials">
+                        <img src="./assets/icons/instagram.png" id="icon" alt="Instagram logo">
+                        <p>t.ind01</p>
+                    </div>
+                    <div class="phoneNumber hover-this" id="socials">
+                        <img src="./assets/icons/phone.png" id="icon" alt="Phone logo">
+                        <p>+31 06 12 34 56 78</p>
+                    </div>
+                    <div class="github hover-this" id="socials">
+                        <img src="./assets/icons/github.png" id="icon" alt="Github logo">
+                        <p> Tindyy </p>
+                    </div>
+                    <div class="gmail hover-this" id="socials">
+                        <img src="./assets/icons/gmail.png" id="icon" alt="Gmail Logo">
+                        <p> tessa.van.der.graaf@hva.nl </p>
+                    </div>
+                    <div class="logo">
+                        <img src="./assets/Logo.png" class="logo" alt="logo" width="100px" height="auto" >
+                    </div>
+                </div>
+                </section>
+        </div>
     </div>
+
+    <div class="cursor"></div>
+
+        <!-- Link to the main.js file -->
+        <script src="./main.js"></script>
 </body>
 </html>
