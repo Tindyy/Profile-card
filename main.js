@@ -1,3 +1,16 @@
+/* add on click event to flip the card on mouse click */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const card = document.getElementById('card');
+
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
+
+
+
+/* add cursor effect */
 (function () {
 
     const link = document.querySelectorAll('pC-back--container > .hover-this');
